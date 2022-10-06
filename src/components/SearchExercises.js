@@ -28,13 +28,17 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         exerciseOptions
       );
       // console.log(exerciseData)
+
       const searchedExercises = exerciseData.filter(
         (exercise) =>
           exercise.name.toLowerCase().includes(search) ||
           exercise.target.toLowerCase().includes(search) ||
           exercise.equipment.toLowerCase().includes(search) ||
-          exercise.bdyPart.toLowerCase().includes(search)
+          exercise.bodyPart.toLowerCase().includes(search),
       );
+
+      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+
       setSearch("");
       setExercises(searchedExercises);
     }
@@ -57,7 +61,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           sx={{
             input: { fontWeight: "700", border: "none", borderRadius: "4px" },
             width: { lg: "1170px", xs: "350px" },
-            backgroundColor: "#fff",
+            backgroundColor: "#000",
             borderRadius: "40px",
           }}
           value={search}
@@ -69,7 +73,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           className="search-btn"
           sx={{
             bgcolor: "#FFFF26",
-            color: "#fff",
+            color: "#000",
             textTransform: "none",
             width: { lg: "173px", xs: "80px" },
             height: "56px",
